@@ -1,0 +1,179 @@
+{
+    "next_games": [{
+        "team_1": "",
+        "team_2": "",
+        "day": "",
+        "time": "",
+        "location": ""
+    }],
+    "last_games": [{
+        "winner_team": "styles/img/team_freak_frogs.png",
+        "looser_team": "styles/img/team_shark_surfers.png",
+        "winner_score": 2,
+        "looser_score": 1,
+        "day": "Friday 16th November, 2018",
+        "time": "3:00 p.m.",
+        "location": "North Field"
+    },{
+        "winner_team": "styles/img/team_freak_frogs.png",
+        "looser_team": "styles/img/team_sloth_bears.png",
+        "winner_score": 2,
+        "looser_score": 1,
+        "day": "Wednesday 14th November, 2018",
+        "time": "6:15 p.m.",
+        "location": "North Field"
+    }, {
+        "winner_team": "styles/img/team_shark_surfers.png",
+        "looser_team": "styles/img/team_sharknados.png",
+        "winner_score": 2,
+        "looser_score": 1,
+        "day": "Tuesday 13th November, 2018",
+        "time": "6:00 p.m.",
+        "location": "North Field"
+    }, {
+        "winner_team": "styles/img/team_sharknados.png",
+        "looser_team": "styles/img/team_dead_birds.png",
+        "winner_score": 2,
+        "looser_score": 0,
+        "day": "Thursday 8th November, 2018",
+        "time": "6:00 p.m.",
+        "location": "North Field"
+    }, {
+        "winner_team": "styles/img/team_freak_frogs.png",
+        "looser_team": "styles/img/team_penguins_tuxedo.png",
+        "winner_score": 2,
+        "looser_score": 0,
+        "day": "Thursday 8th November, 2018",
+        "time": "2:30 p.m.",
+        "location": "North Field"
+    }, {
+        "winner_team": "styles/img/team_shark_surfers.png",
+        "looser_team": "styles/img/team_lamp_dogs.png",
+        "winner_score": 2,
+        "looser_score": 0,
+        "day": "Wednesday 7th November, 2018",
+        "time": "2:45 p.m.",
+        "location": "North Field"
+    }, {
+        "winner_team": "styles/img/team_sloth_bears.png",
+        "looser_team": "styles/img/team_racing_unicorns.png",
+        "winner_score": 2,
+        "looser_score": 1,
+        "day": "Tuesday 6th November, 2018",
+        "time": "6:00 p.m.",
+        "location": "North Field"
+    }],
+    "teams": [{
+        "name": "The Dead Birds",
+        "logo": "styles/img/team_dead_birds.png",
+        "members": [{
+            "name": "Ernest",
+            "type": "Student",
+            "position": "Offense"
+        }, {
+            "name": "Santi",
+            "type": "Student",
+            "position": "Defense"
+        }],
+        "wins": 0,
+        "losses": 2
+    }, {
+        "name": "The Freak Frogs",
+        "logo": "styles/img/team_freak_frogs.png",
+        "members": [{
+            "name": "Teo",
+            "type": "Student",
+            "position": "Offense"
+        }, {
+            "name": "Gerard",
+            "type": "Staff",
+            "position": "Defense"
+        }],
+        "wins": 6,
+        "losses": 2
+    }, {
+        "name": "The Lamp Dogs",
+        "logo": "styles/img/team_lamp_dogs.png",
+        "members": [{
+            "name": "Lluís",
+            "type": "Staff",
+            "position": "Offense"
+        }, {
+            "name": "Emi",
+            "type": "Student",
+            "position": "Defense"
+        }],
+        "wins": 0,
+        "losses": 2
+    }, {
+        "name": "The Penguins in Tuxedo",
+        "logo": "styles/img/team_penguins_tuxedo.png",
+        "members": [{
+            "name": "David",
+            "type": "Student",
+            "position": "Offense"
+        }, {
+            "name": "Paco",
+            "type": "Staff",
+            "position": "Defense"
+        }],
+        "wins": 0,
+        "losses": 2
+    }, {
+        "name": "The Racing Unicorns",
+        "logo": "styles/img/team_racing_unicorns.png",
+        "members": [{
+            "name": "Andy",
+            "type": "Student",
+            "position": "Offense"
+        }, {
+            "name": "Anna",
+            "type": "Student",
+            "position": "Defense"
+        }],
+        "wins": 1,
+        "losses": 2
+    }, {
+        "name": "The Shark Surfers",
+        "logo": "styles/img/team_shark_surfers.png",
+        "members": [{
+            "name": "Raül",
+            "type": "Staff",
+            "position": "Offense"
+        }, {
+            "name": "Dani",
+            "type": "Student",
+            "position": "Defense"
+        }],
+        "wins": 5,
+        "losses": 3
+    }, {
+        "name": "The Sharknados",
+        "logo": "styles/img/team_sharknados.png",
+        "members": [{
+            "name": "Gian Luca",
+            "type": "Staff",
+            "position": "Offense"
+        }, {
+            "name": "Shadan",
+            "type": "Student",
+            "position": "Defense"
+        }],
+        "wins": 3,
+        "losses": 2
+    }, {
+        "name": "The Sloth Bears",
+        "logo": "styles/img/team_sloth_bears.png",
+        "members": [{
+            "name": "Grisha",
+            "type": "Student",
+            "position": "Offense"
+        }, {
+            "name": "Vasil",
+            "type": "Staff",
+            "position": "Defense"
+        }],
+        "wins": 3,
+        "losses": 3
+    }]
+}

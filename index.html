@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Ubiqum Foosball League</title>
+
+    <link rel="shortcut icon" sizes="128x128" href="styles/img/UFL_logo.png">
+    <link rel="shortcut icon" sizes="196x196" href="styles/img/UFL_logo.png">
+
+    <link rel="apple-touch-icon" href="styles/img/UFL_logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="styles/img/UFL_logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="styles/img/UFL_logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="styles/img/UFL_logo.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header v-show="page=='home'">
+            <img class="logo" src="styles/img/UFL_logo.png" alt="">
+        </header>
+
+        <header v-show="page=='about'||page=='contact'||page=='chat'||page=='nextGames'||page=='lastGames'||page=='playoffs'||page=='locations'||page=='allTeams'||page=='eachTeam'||page=='ranking'" class="header_pages">
+            <img class="logo" src="styles/img/UFL_logo.png" alt="">
+            <h1 v-show="page=='about'">About Us</h1>
+            <h1 v-show="page=='contact'">Contact Us</h1>
+            <h1 v-show="page=='chat'">Chat Room</h1>
+            <h1 v-show="page=='nextGames'">Next Games</h1>
+            <h1 v-show="page=='lastGames'">Last Games</h1>
+            <h1 v-show="page=='playoffs'">Playoffs</h1>
+            <h1 v-show="page=='locations'">Locations</h1>
+            <h1 v-show="page=='allTeams'">Teams Info</h1>
+            <h1 v-show="page=='eachTeam'">Team Info</h1>
+            <h1 v-show="page=='ranking'">Ranking</h1>
+        </header>
+
+        <nav>
+            <div class="navbar">
+                <a v-show="page=='home'"><input class="nav_icon" type="image" src="styles/img/home_icon_1.png"></a>
+                <a v-show="page=='about'||page=='contact'||page=='chat'||page=='nextGames'||page=='lastGames'||page=='playoffs'||page=='locations'||page=='allTeams'||page=='eachTeam'||page=='ranking'" v-on:click="show('home')"><input class="nav_icon" type="image" src="styles/img/home_icon_2.png"></a>
+                <a v-on:click="show('about')"><input class="nav_icon" type="image" src="styles/img/UFL_info_icon.png"></a>
+                <a v-on:click="show('contact')"><input class="nav_icon" type="image" src="styles/img/contact_icon.png"></a>
+                <a v-on:click="show('chat')"><input class="nav_icon" type="image" src="styles/img/chat_icon.png"></a>
+                <a v-show="!loggedIn" v-on:click="login()"><input class="nav_icon" type="image" src="styles/img/login_icon.png"></a>
+                <a v-show="loggedIn" v-on:click="logout()"><input class="nav_icon" type="image" src="styles/img/logout_icon.png"></a>
+            </div>
+        </nav>
+
+        <main v-show="page=='home'" class="main_home">
+            <label class="icon_title">
+                <a v-on:click="show('nextGames'), nextMatches()"><input class="main_icon" type="image" src="styles/img/next_games_icon.png"></a>
+                Next Games</label>
+            <label class="icon_title">
+                <a v-on:click="show('lastGames')"><input class="main_icon" type="image" src="styles/img/last_games_icon.png"></a>
+                Last Games</label>
+            <label class="icon_title">
+                <a v-on:click="show('playoffs')"><input class="main_icon" type="image" src="styles/img/playoffs_icon.png"></a>
+                Playoffs</label>
+            <label class="icon_title">
+                <a v-on:click="show('locations')"><input class="main_icon" type="image" src="styles/img/locations_icon.png"></a>
+                Locations</label>
+            <label class="icon_title">
+                <a v-on:click="show('allTeams')"><input class="main_icon" type="image" src="styles/img/teams_info_icon.png"></a>
+                Teams Info</label>
+            <label class="icon_title">
+                <a v-on:click="show('ranking')"><input class="main_icon" type="image" src="styles/img/ranking_icon.png"></a>
+                Ranking</label>
+        </main>
+
+        <main v-show="page=='about'">
+            <h2 class="bold">About <span class="ubiqum">Ubiqum FL</span></h2>
+            <p>No matter where we come from, our common mission and our <span class="bold font_20">passion for foosball</span> unites us.</p>
+            <p>With our foosball fields at <span class="bold italic ubiqum">WeWork Glories</span> and <span class="bold font_20">players from around the world</span>, we learn to be agile players, while we drink <span class="bold font_20">free beer</span> and spend time together.</p>
+            <h2 class="bold">Tournament <span class="ubiqum">Rules</span></h2>
+            <ul>
+                <li><span class="bold">Three (3) rounds</span> will be played for each match.</li>
+                <li>A maximum of <span class="bold">five (5) goals</span> can be marked for each round.</li>
+                <li>If the teams are tied (1-1) when reaching the last round, this must be won with a <span class="bold">minimum difference of two (2) goals.</span></li>
+            </ul>
+        </main>
+
+        <main v-show="page=='contact'">
+            <p>Send us any question you have, we will answer as soon as possible.</p>
+            <form action="mailto:">
+                <label class="label_text">Name: <input class="input_text" type="text" placeholder="Your name" required></label>
+                <label class="label_text">e-mail: <input class="input_text" type="text" placeholder="Your e-mail" required></label>
+                <label><textarea type="textarea" placeholder="Write your message"></textarea></label>
+                <button type="submit" value="submit">Send message</button>
+            </form>
+        </main>
+
+        <main v-show="page=='chat'">
+            <div class="loggedOut" v-show="!loggedIn">
+                <p class="center bold">Authentication required to enter the chat room.</p>
+                <button class="login_btn" v-on:click="login()">Log In</button>
+            </div>
+            <div class="chat_container" v-show="loggedIn">
+                <div id="chat">
+                    Loading posts...
+                </div>
+                <input id="textInput" type="text" placeholder="Write your message...">
+
+                <button v-on:click="sendMessage()">Send</button>
+            </div>
+        </main>
+
+        <main v-show="page=='nextGames'">
+            <div v-show="no_games">
+                <p class="center bold font_20">More matches coming <span class="ubiqum">soon</span>!</p>
+            </div>
+            <div class="info_container" v-show="!no_games">
+                <div class="card" v-for="game in data.next_games">
+                    <div class="heading">
+                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.team_1"></a>
+                        <p class="center">Vs.</p>
+                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.team_2"></a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Day</th>
+                            <td colspan="2">{{game.day}}</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td colspan="2">{{game.time}}</td>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <td colspan="2"><a v-on:click="show('locations')">{{game.location}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+        <main v-show="page=='lastGames'">
+            <div class="card" v-for="game in data.last_games">
+                <div class="heading">
+                    <div class="result">
+                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.winner_team"></a>
+                        <p class="green font_20">{{game.winner_score}}</p>
+                    </div>
+                    <p class="center">Vs.</p>
+                    <div class="result">
+                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.looser_team">
+                        </a>
+                        <p class="red font_20">{{game.looser_score}}</p>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <td colspan="2">{{game.day}}</td>
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <td colspan="2">{{game.time}}</td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td colspan="2"><a v-on:click="show('locations')">{{game.location}}</a></td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <main v-show="page=='playoffs'" class="playoffs">
+            <a target="_blank" href="styles/img/playoffs.jpg"><input class="playoffs_schedule" type="image" src="styles/img/playoffs.jpg"></a>
+            <p>(Click on the image to see it full size)</p>
+        </main>
+
+        <main v-show="page=='locations'">
+            <div class="location">
+                <h2><span class="ubiqum">North</span> Field</h2>
+                <p class="center">Luxa C/Tánger-Badajoz, WeWork Glòries, 8th Floor, 08018 Barcelona.</p>
+                <div class="field">
+                    <img class="location_img" src="styles/img/north_1.jpg">
+                    <img class="location_img" src="styles/img/north_2.jpg">
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5033.089434343473!2d2.186808088351857!3d41.402475577535746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a33d2f431d45%3A0x3f1fd71f16834f39!2sUbiqum+Code+Academy!5e0!3m2!1ses!2ses!4v1541762346783" allowfullscreen></iframe>
+            </div>
+            <div class="location">
+                <h2><span class="ubiqum">South</span> Field</h2>
+                <p class="center">Luxa C/Tánger-Badajoz, WeWork Glòries, 8th Floor, 08018 Barcelona.</p>
+                <div class="field">
+                    <img class="location_img" src="styles/img/south_1.jpg">
+                    <img class="location_img" src="styles/img/south_2.jpg">
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5033.089434343473!2d2.186808088351857!3d41.402475577535746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a33d2f431d45%3A0x3f1fd71f16834f39!2sUbiqum+Code+Academy!5e0!3m2!1ses!2ses!4v1541762346783" allowfullscreen></iframe>
+            </div>
+        </main>
+
+
+        <main v-show="page=='allTeams'">
+            <label class="icon_title" v-for="team in data.teams">
+                <a v-on:click="show('eachTeam'), saveTeam(team)"><input class="main_icon" type="image" :src="team.logo"></a>
+                {{team.name}}</label>
+        </main>
+
+        <main v-show="page=='eachTeam'">
+            <div class="loggedOut" v-show="!loggedIn">
+                <p class="center bold">Authentication required to see teams information.</p>
+                <button class="login_btn" v-on:click="login()">Log In</button>
+            </div>
+            <div class="info_container" v-show="loggedIn">
+                <div class="card" v-for="team in selectedTeam">
+                    <div class="heading">
+                        <img class="team_logo" :src="team.logo" alt="">
+                        <p class="font_20 center bold">{{team.name}}</p>
+                    </div>
+                    <p class="bold">Team Members:</p>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Position</th>
+                        </tr>
+                        <tr v-for="member in team.members">
+                            <td>{{member.name}}</td>
+                            <td>{{member.type}}</td>
+                            <td>{{member.position}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <a v-on:click="show('allTeams')"><input class="nav_icon" type="image" src="styles/img/back_icon.png"></a>
+            </div>
+        </main>
+
+
+        <main v-show="page=='ranking'">
+            <div class="card heading" v-for="team in data.teams">
+                <p class="ranking_position">#{{data.teams.indexOf(team)+1}}</p>
+                <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="team.logo"></a>
+                <div class="ranking_result">
+                    <p class="green">Wins - <span class="bold">{{team.wins}}</span></p>
+                    <p class="red">Losses - <span class="bold">{{team.losses}}</span></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBXxMG5PrKi4WFsi35MqLrLufr-LklEWqc",
+            authDomain: "ubiqum-foosball-league.firebaseapp.com",
+            databaseURL: "https://ubiqum-foosball-league.firebaseio.com",
+            projectId: "ubiqum-foosball-league",
+            storageBucket: "ubiqum-foosball-league.appspot.com",
+            messagingSenderId: "223076128987"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="scripts/data.json"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
+
+</html>

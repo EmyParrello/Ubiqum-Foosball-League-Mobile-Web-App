@@ -1,0 +1,504 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    /*the body always gets the whole window height and width*/
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+}
+
+
+/*HEADER*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/header_background.jpg);
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+}
+
+h1 {
+    font-size: 32px;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.header_pages {
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/*NAV BAR*/
+nav {
+    background-color: white;
+    width: 100%;
+    height: 55px;
+    position: fixed;
+    top: 100px;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05), transparent, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
+    border-top-style: solid;
+    border-top-color: grey;
+    border-top-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    border-bottom-width: thin;
+    box-shadow: 0 0 5px black;
+    position: fixed;
+    top: 100px;
+
+}
+
+.nav_icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*MAIN CONTENT*/
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    padding-top: 175px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+
+/*Home page / Teams Info*/
+a {
+    display: block;
+    color: #f44336;
+    text-decoration: none;
+}
+
+.main_home {
+    padding: 8px;
+    padding-top: 163px;
+}
+
+.main_icon {
+    height: 80px;
+    width: 80px;
+    padding: 5px;
+}
+
+.icon_title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    width: 130px;
+}
+
+
+/*About*/
+ul {
+    padding-left: 20px;
+}
+
+li {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 30px;
+    padding: 5px;
+}
+
+
+/*Contact*/
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    align-items: justify;
+    padding: 10px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #f44336;
+    border: none;
+    box-shadow: 0 0 2px black;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.label_text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input_text {
+    width: 75%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 2px black;
+    padding: 5px;
+}
+
+textarea {
+    width: 97%;
+    height: 100px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 2px black;
+    padding: 5px;
+    font-size: 14px;
+}
+
+
+/*Chat*/
+#chat {
+    border-style: solid;
+    border-color: grey;
+    border-width: thin;
+    box-shadow: 0 0 2px black;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+    overflow: scroll;
+}
+
+#textInput {
+    width: 70%;
+    border-style: solid;
+    border-color: grey;
+    border-width: thin;
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px black;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.chat_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.userImg {
+    width: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    margin-right: 15px;
+    box-shadow: 0 0 2px black;
+}
+
+.currentUser > .userImg {
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.currentUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(244, 67, 54, 0.35);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px black;
+}
+
+.otherUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px black;
+}
+
+.chatMsg {
+    word-break: break-all;
+    margin: 0px;
+    line-height: 25px;
+}
+
+
+/*Message when user is logged out*/
+.loggedOut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.login_btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+/*TABLES -> Next Games / Last Games / Ranking / Team Info(each team)*/
+table {
+    width: 100%;
+}
+
+tr {
+    height: 40px;
+}
+
+th {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.10);
+    padding: 10px;
+    width: 30%;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.10);
+    text-align: left;
+    padding: 10px;
+    width: 70%;
+}
+
+.card {
+    border-style: solid;
+    border-color: grey;
+    border-width: thin;
+    box-shadow: 0 0 2px black;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.info_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team_logo {
+    width: 100px;
+    height: 100px;
+}
+
+.ranking_position {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ranking_result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.red {
+    color: red;
+    padding-bottom: 10px;
+}
+
+.green {
+    color: green;
+    padding-bottom: 10px;
+}
+
+
+/*Playoffs*/
+playoffs {
+    justify-content: center;
+}
+
+.playoffs_schedule {
+    width: 250px;
+}
+
+
+/*Locations*/
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.location_img {
+    width: 45%;
+    height: 45%;
+    border-style: solid;
+    border-color: grey;
+    border-width: thin;
+    box-shadow: 0 0 2px black;
+}
+
+iframe {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: grey;
+    border-width: thin;
+    box-shadow: 0 0 2px black;
+}
+
+
+/*TEXT STYLE*/
+P {
+    font-size: 18px;
+    text-align: justify;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 35px;
+}
+
+.font_20 {
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.center {
+    text-align: center;
+}
+
+.ubiqum {
+    color: #f44336;
+}
+
+
+
+/*MEDIA QUERIES: to change the layout when the screen is on landscape mode.*/
+@media only screen and (min-device-width: 568px) and (max-device-width: 1366px) and (orientation: landscape) {
+
+    /*    HEADER*/
+    header,
+    .header_pages {
+        height: 100%;
+        width: 19.8%;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-right-style: solid;
+        border-color: black;
+        border-width: thin;
+        position: fixed;
+        box-shadow: 0 0 1px black;
+        background-position: 50% 50%;
+        z-index: 2;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 26px;
+        padding: 10px;
+    }
+
+    /*    NAV BAR*/
+    nav {
+        top: 0px;
+        z-index: 1;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 0;
+        padding-left: 20%;
+        width: 80%;
+    }
+
+    /*    MAIN CONTENT*/
+    main {
+        position: absolute;
+        top: 15%;
+        left: 20%;
+        width: 72%;
+        padding-top: 0px;
+        padding: 20px;
+    }
+
+    .main_home {
+        padding-top: 0px;
+        padding: 7px;
+        padding-left: 20px;
+    }
+
+    .icon_title {
+        width: 120px;
+    }
+
+    .playoffs_schedule {
+        width: 200px;
+    }
+
+    /*Chat*/
+    #chat {
+        height: 170px;
+    }
+
+    #textInput {
+        width: 78%;
+    }
+
+}
