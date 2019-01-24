@@ -120,10 +120,10 @@ var app = new Vue({
                 }
             }
         },
-        
-        saveTeam: function (team) {
-            this.selectedTeam = [];
-            this.selectedTeam.push(team);
+
+        saveTeam: function (team) {            
+                this.selectedTeam = [];
+                this.selectedTeam.push(team);
         },
 
         rankingOrder: function () {
@@ -141,7 +141,6 @@ var app = new Vue({
 
     updated() {
         this.scrollToBottom();
-        this.rotateLogo();
     }
 
 })
