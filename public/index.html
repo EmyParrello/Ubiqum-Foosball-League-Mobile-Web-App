@@ -45,7 +45,7 @@
 
         <nav>
             <div class="navbar">
-                <image v-show="page=='home'" class="nav_icon" type="image" src="styles/img/home_icon_1.png">
+                <image v-show="page=='home'" class="nav_icon" src="styles/img/home_icon_1.png">
                 <a v-show="page=='about'||page=='contact'||page=='chat'||page=='nextGames'||page=='lastGames'||page=='playoffs'||page=='locations'||page=='allTeams'||page=='eachTeam'||page=='ranking'" v-on:click="show('home')"><input class="nav_icon" type="image" src="styles/img/home_icon_2.png"></a>
                 <a v-on:click="show('about')"><input class="nav_icon" type="image" src="styles/img/UFL_info_icon.png"></a>
                 <a v-on:click="show('contact')"><input class="nav_icon" type="image" src="styles/img/contact_icon.png"></a>
@@ -120,9 +120,9 @@
             <div class="info_container" v-show="!no_games">
                 <div class="card" v-for="game in data.next_games">
                     <div class="heading">
-                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.team_1"></a>
+                        <image class="team_logo" :src="game.team_1">
                         <p class="center">Vs.</p>
-                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.team_2"></a>
+                        <image class="team_logo" :src="game.team_2">
                     </div>
                     <table>
                         <tr>
@@ -147,13 +147,12 @@
             <div class="card" v-for="game in data.last_games">
                 <div class="heading">
                     <div class="result">
-                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.winner_team"></a>
+                        <image class="team_logo" :src="game.winner_team">
                         <p class="green font_20">{{game.winner_score}}</p>
                     </div>
                     <p class="center">Vs.</p>
                     <div class="result">
-                        <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="game.looser_team">
-                        </a>
+                        <image class="team_logo" :src="game.looser_team">
                         <p class="red font_20">{{game.looser_score}}</p>
                     </div>
                 </div>
@@ -240,7 +239,7 @@
         <main v-show="page=='ranking'">
             <div class="card heading" v-for="team in data.teams">
                 <p class="ranking_position">#{{data.teams.indexOf(team)+1}}</p>
-                <a v-on:click="show('eachTeam')"><input class="team_logo" type="image" :src="team.logo"></a>
+                <image class="team_logo" :src="team.logo">
                 <div class="ranking_result">
                     <p class="green">Wins - <span class="bold">{{team.wins}}</span></p>
                     <p class="red">Losses - <span class="bold">{{team.losses}}</span></p>

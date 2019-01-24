@@ -120,7 +120,7 @@ var app = new Vue({
                 }
             }
         },
-        
+
         saveTeam: function (team) {            
                 this.selectedTeam = [];
                 this.selectedTeam.push(team);
@@ -141,7 +141,6 @@ var app = new Vue({
 
     updated() {
         this.scrollToBottom();
-        this.rotateLogo();
     }
 
 })
